@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<html lang='en'>
+
+<head>
+  <title>Math Garden</title>
+  <meta charset="utf-8">
+  <meta charset='utf-8'  name="viewport"  http-equiv='Content-Type' content='text/html' />
+  <!-- Custom styling -->
+  <link rel='stylesheet' href='css/styles.css'>
+  <!-- Custom font -->
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Just+Another+Hand&display=swap'>
+  <!-- </script> -->
+  <link rel="icon" href="download (4).png">
+  <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@latest/dist/tf.min.js"></script>
+  <script src="vendor/opencv.js"></script>
+  <script src="processing.js"></script>
+  <!-- TODO: Add Javascript files here -->
+  <script src="drawing.js"> </script>
+  <script src="maths.js"> </script>
+
+</head>
+
+<body>
+
+  <div class='container'>
+
+    <!-- TODO: Add title here -->
+    <h1 id="title">Math Garden</h1>
+    <h2 id='question'><span id='n1'>3</span> + <span id='n2'>2</span> = </h2>
+
+    <!-- TODO: Add a drawing canvas here -->
+    <canvas id="canva" width="150px" height="150px"> </canvas>
+
+  </div>
+
+  <div class='container'>
+    <button id='checkAnswer' class='btn' value='Check'>Button Text Here</button>
+  </div>
+
+  <script>
+    loadModel();
+    prepareCanvas();
+    nextQuestion();
+    
+    document.getElementById('checkAnswer').addEventListener('click',function(event){
+      checkAnswer();
+      clearCanvas();
+      nextQuestion();
+    })
+
+  </script>
+  <!-- TODO: Set up TF model and drawing logic-->
+
+</body>
+
+</html>
